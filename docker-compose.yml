@@ -1,0 +1,10 @@
+version: '3.0'
+
+services:
+  f1-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports: 
+      - '8080:8080'
