@@ -88,8 +88,8 @@ func GetNextRace() (*Race, error) {
 		Status:    closestEvent.Status,
 		Name:      raceTitle,
 		Type:      raceType,
-		StartDate: closestEvent.Start.Format(time.RFC3339),
-		EndDate:   closestEvent.End.Format(time.RFC3339),
+		StartDate: closestEvent.Start.UTC().Format(time.RFC3339),
+		EndDate:   closestEvent.End.UTC().Format(time.RFC3339),
 	}
 
 	return race, nil
@@ -138,8 +138,8 @@ func GetCurrentRace() (*Race, error) {
 		Status:    currentEvent.Status,
 		Name:      raceTitle,
 		Type:      raceType,
-		StartDate: currentEvent.Start.Format(time.RFC3339),
-		EndDate:   currentEvent.End.Format(time.RFC3339),
+		StartDate: currentEvent.Start.UTC().Format(time.RFC3339),
+		EndDate:   currentEvent.End.UTC().Format(time.RFC3339),
 	}
 
 	return race, nil
